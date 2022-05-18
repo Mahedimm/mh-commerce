@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white scrollbar-hide;
+  }
+
+  header {
+    @apply fixed top-0 z-50 flex w-screen items-center justify-between   transition-all  py-12 shadow-xl;
+  }
+}
