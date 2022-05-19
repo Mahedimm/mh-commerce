@@ -8,6 +8,6 @@
   }
 
   header {
-    @apply fixed top-0 z-50 flex w-screen items-center justify-between   transition-all  py-12 shadow-xl;
+    @apply fixed top-0 z-50 flex w-screen items-center justify-between   transition-all  py-8 shadow-xl;
   }
 }

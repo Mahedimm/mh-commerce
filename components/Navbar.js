@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import { AiOutlineShopping } from 'react-icons/ai';
+import { useStateContext } from '../context/StateContext';
+import Cart from './Cart';
 const Navbar = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
+    const {showCart,setShowCart,totalQuantity} = useStateContext()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,13 +32,14 @@ const Navbar = () => {
             </Link>
           </div>
           <div className={`${isScrolled ? "text-white":"text-black"}`}>
-            <Link href="/">
-            <button>
-              <AiOutlineShopping className="text-2xl cursor-pointer hover:transition relative " />
-              <span className=' absolute  text-white text-sm right-[16px] md:right-[32px] top-9 md:top-10 w-[18px] h-[18px] rounded-full bg-red-600 text-center'>1</span>
+           
+            <button className='hover:transition relative' onClick={()=>setShowCart(!showCart)}>
+              <AiOutlineShopping className="text-2xl cursor-pointer  hover:" />
+              <span className=' absolute  text-white text-sm right-[-8px] top-[-5px]  w-[18px] h-[18px] rounded-full bg-red-600 text-center'>{totalQuantity}</span>
               </button>
-            </Link>
           </div>
+          {showCart && <Cart />}
+         
         </header>
     );
 };
