@@ -24,7 +24,7 @@ const Navbar = () => {
   }, []);
 
     return (
-        <header className={`${isScrolled ? "bg-[#1e3932]":"bg-white"} flex items-center justify-between px-5 lg:px-10 mb-2`}>
+        <header className={`${isScrolled ? "bg-[#1e3932]":"bg-white"} flex items-center justify-between px-5 lg:px-10 mb-2 `}>
           <div className="
           ">
           <Link href="/">

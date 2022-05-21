@@ -8,14 +8,22 @@ const ProductDetails = ({productData,productsData}) => {
     const {name,price,details,image} = productData;
     const [quantity, setQuantity] = React.useState(1);
     const [index, setIndex] = React.useState(0);
-    const {decQty, incQty,qty,onAdd} = useStateContext();
+    const {decQty, incQty,qty,onAdd,setShowCart} = useStateContext();
+
+    const handleBuyNow = async()=>{
+
+        onAdd(productData,qty);
+        setShowCart(true);
+    
+    }
+  
   
     return (
         <div className="mt-40 text-black h-full">
             <div className="flex flex-col md:flex-row gap-10 m-10 mt-16 text-[#1F3A33]">
                 <div className="">
                     <div className='rounded-2xl bg-[#F0EBE0] w-[300px] h-[300px] md:w-[400px] md:h-[400px]  cursor-pointer transition hover:bg-[#f02d34]'>
-                        <img src={urlFor(image && image[index])} alt="" srcset="" />
+                        <img src={urlFor(image && image[index])} alt=""  />
                     </div>
                     <div className="flex gap-3 mt-4">
                        {image?.map((img,i) => (
@@ -48,7 +56,7 @@ const ProductDetails = ({productData,productsData}) => {
                     </div>
                     <div className='mt-5 '>
                         <button type="button" className='px-9 py-1 border-2 border-red-600 text-red-500 font-bold my-3  hover:text-white hover:bg-red-600 transition mr-6' onClick={()=>onAdd(productData,qty)}>Add to Cart</button>
-                        <button  className='px-10 py-1 border-2 bg-red-600 border-red-600 text-white  hover:bg-red-400 font-bold' onClick="">BUY NOW</button>
+                        <button  className='px-10 py-1 border-2 bg-red-600 border-red-600 text-white  hover:bg-red-400 font-bold' onClick={handleBuyNow}>BUY NOW</button>
                     </div>
                 </div>
             </div>

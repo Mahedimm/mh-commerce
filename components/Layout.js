@@ -15,10 +15,10 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
       <Toaster />
-      <main className="max-w-[1400px] m-auto w-full]">
+      <main className="max-w-[1400px] m-auto w-full min-h-screen">
         {children}
       </main>
-      <footer>
+      <footer className="">
         <Footer />
       </footer>
     </div>

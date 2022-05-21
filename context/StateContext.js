@@ -91,7 +91,10 @@ export const StateContext = ({ children }) => {
             setShowCart,
             totalQuantity,
             toggleCartItemQuantity,
-            onRemove
+            onRemove,
+            setCartItems,
+            setTotalPrice,
+            setTotalQuantities 
           
         }}>
             {children}
