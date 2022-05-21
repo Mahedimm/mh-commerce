@@ -11,3 +11,19 @@
     @apply fixed top-0 z-50 flex w-screen items-center justify-between   transition-all  py-8 shadow-xl;
   }
 }
+.swiper {
+  width: 260px;
+  height: 340px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background: red;
+  text-align: center;
+}
