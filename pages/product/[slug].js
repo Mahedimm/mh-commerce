@@ -1,6 +1,6 @@
 import React from 'react';
 import { AiFillStar, AiOutlineMinus, AiOutlinePlus, AiOutlineStar } from 'react-icons/ai';
-import RecommendedProduct from '../../components/recommendedProduct';
+import RecommendedProduct from '../../components/RecommendedProduct';
 import { useStateContext } from '../../context/StateContext';
 import { client, urlFor } from '../../lib/client';
 
